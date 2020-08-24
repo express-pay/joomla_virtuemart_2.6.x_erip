@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="2.5" type="plugin" method="upgrade" group="vmpayment">
+	<name>VMPAYMENT_ERIP_EXPRESSPAY</name>
+	<author>ООО «ТриИнком»</author>
+	<creationDate>May 2016</creationDate>
+	<authorUrl>https://express-pay.by/</authorUrl>
+	<copyright></copyright>
+    <license></license>
+    <version>2.3</version>
+	<description>VMPAYMENT_DESCRIPTION</description>
+	<files>
+		<filename plugin="erip_expresspay">erip_expresspay.php</filename>
+		<filename>index.html</filename>
+		<filename>erip_expresspay.xml</filename>
+		<folder>assets</folder>
+		<folder>fields</folder>
+	</files>
+	<languages>
+		<language tag="ru-RU">ru-RU.plg_vmpayment_erip_expresspay.ini</language>
+		<language tag="en-GB">en-GB.plg_vmpayment_erip_expresspay.ini</language>
+	</languages>
+	<params addpath="/plugins/vmpayment/erip_expresspay/fields">
+		<param type="vmjpluginwarning" />
+		<param type="vmgetinfo" default=""/>
+		<param name="token" type="text" size="30" label="VMPAYMENT_TOKEN_LABEL" description="VMPAYMENT_TOKEN_DESC" default="" />
+		<param type="vmgethandlerurl" label="VMPAYMENT_HANDLER_URL_LABEL" default=""/>
+		
+		<param name="sign_invoices" type="radio" label="VMPAYMENT_SIGN_INVOICES_LABEL" description="VMPAYMENT_SIGN_INVOICES_DESC" default="">
+			<option value="false">COM_VIRTUEMART_NO</option>
+			<option value="true">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="secret_key" type="text" size="30" label="VMPAYMENT_SECRET_KEY_LABEL" description="VMPAYMENT_SECRET_KEY_DESC" default="" />
+		<param name="sign_notify" type="radio" label="VMPAYMENT_SIGN_NOTIFY_LABEL" description="VMPAYMENT_SIGN_NOTIFY_DESC" default="">
+			<option value="false">COM_VIRTUEMART_NO</option>
+			<option value="true">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="secret_key_notify" type="text" size="30" label="VMPAYMENT_SECRET_KEY_NOTIFY_LABEL" description="VMPAYMENT_SECRET_KEY_NOTIFY_DESC" default="" />
+		<param name="name_editable" type="radio" label="VMPAYMENT_NAME_EDITABLE_LABEL" description="VMPAYMENT_NAME_EDITABLE_DESC" default="">
+			<option value="false">COM_VIRTUEMART_NO</option>
+			<option value="true">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="address_editable" type="radio" label="VMPAYMENT_ADDRESS_EDITABLE_LABEL" description="VMPAYMENT_ADDRESS_EDITABLE_DESC" default="">
+			<option value="false">COM_VIRTUEMART_NO</option>
+			<option value="true">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="amount_notify" type="radio" label="VMPAYMENT_AMOUNT_EDITABLE_LABEL" description="VMPAYMENT_AMOUNT_EDITABLE_DESC" default="">
+			<option value="false">COM_VIRTUEMART_NO</option>
+			<option value="true">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="test_mode" type="radio" label="VMPAYMENT_TEST_MODE_LABEL" default="">
+			<option value="false">COM_VIRTUEMART_NO</option>
+			<option value="true">COM_VIRTUEMART_YES</option>
+		</param>
+		<param name="url_api" type="text" size="30" label="VMPAYMENT_URL_API_LABEL" default="https://api.express-pay.by" />
+		<param name="url_sandbox_api" type="text" size="30" label="VMPAYMENT_SANDBOX_API_LABEL" default="https://sandbox-api.express-pay.by" />
+		<param name="message_success" type="vmgetmessagesuccess" label="VMPAYMENT_MESSAGE_SUCCESS_LABEL" default="" />
+
+		<param name="settings" type="spacer" label="VMPAYMENT_SETTINGS" />
+
+		<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_STATUS_PENDING" description="VMPAYMENT_STATUS_PENDING_EXPLAIN" />
+		<param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_STATUS_SUCCESS" description="VMPAYMENT_STATUS_SUCCESS_EXPLAIN" />
+		<param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_STATUS_FAILED" description="VMPAYMENT_STATUS_FAILED_EXPLAIN" />
+
+		<param type="vmgetcopyright" default=""/>
+	</params>
+</install>
